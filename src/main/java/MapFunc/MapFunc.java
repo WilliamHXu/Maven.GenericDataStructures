@@ -2,6 +2,7 @@ package MapFunc;
 
 import java.util.ArrayList;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Create a function called `map` that takes an ArrayList and a `Function<T,R>` object,
@@ -9,4 +10,7 @@ import java.util.function.Function;
  */
 public class MapFunc {
 
+    public static ArrayList map(ArrayList arrayList, Function<Integer, Object> function){
+        return (ArrayList) arrayList.stream().map(function).collect(Collectors.toCollection(ArrayList::new));
+    }
 }
